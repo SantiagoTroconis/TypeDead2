@@ -1,0 +1,13 @@
+:root {
+  --game-font: 'VT323', 'Press Start 2P', monospace;
+  --title-font: 'Press Start 2P', 'VT323', monospace;
+  --accent: #7bff6a;
+  --accent-dim: #2b7a1e;
+  --danger: #ff3b3b;
+  --bg: #05070a;
+  --panel: rgba(8, 14, 10, 0.92);
+}
+body,
+#ui-layer {
+  font-family: var(--game-font);
+}

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Type of the Dead — Voice Edition</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=VT323&family=Press+Start+2P&display=swap">
+  <link rel="stylesheet" href="css/theme.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div id="gameContainer">
+    <div id="hud">
+      <div class="hud-left">
+        <div class="hud-row"><span class="hud-label">STAGE</span><span id="stageVal">1</span></div>
+        <div class="hud-row"><span class="hud-label">SCORE</span><span id="scoreVal">0</span></div>
+      </div>
+      <div class="hud-center">
+        <div id="stageTitle">GRAVEYARD</div>
+        <div id="waveInfo">WAVE 1</div>
+      </div>
+      <div class="hud-right">
+        <div class="hud-row"><span class="hud-label">HP</span>
+          <div class="hp-bar"><div id="hpFill"></div></div>
+        </div>
+        <div class="hud-row"><span class="hud-label">COMBO</span><span id="comboVal">x1</span></div>
+      </div>
+    </div>
+    <canvas id="gameCanvas"></canvas>
+    <div id="ui-layer">
+      <div id="typedBox">
+        <div id="micStatus" data-status="idle">
+          <span class="mic-dot"></span><span id="micLabel">MIC OFF</span>
+          <span id="micMeter"><i></i><i></i><i></i><i></i><i></i><i></i></span>
+        </div>
+        <span id="heardText"></span><span class="caret">_</span>
+      </div>
+      <div id="startScreen" class="overlay">
+        <div class="panel">
+          <h1>TYPE OF THE DEAD</h1>
+          <p class="subtitle">A retro voice shooter</p>
+          <ul class="instructions">
+            <li>Say the WORD above a zombie to shoot it</li>
+            <li>Bosses need every word of their name</li>
+            <li>Survive 5 stages — beware the bosses</li>
+          </ul>
+          <p id="voiceWarning" class="hidden"></p>
+          <button id="startBtn" class="btn">PRESS TO START</button>
+        </div>
+      </div>
+      <div id="stageScreen" class="overlay hidden">
+        <div class="panel">
+          <h2 id="stageHeading">STAGE 1</h2>
+          <p id="stageDesc">The Graveyard</p>
+          <button id="stageBtn" class="btn">BEGIN</button>
+        </div>
+      </div>
+      <div id="gameOverScreen" class="overlay hidden">
+        <div class="panel">
+          <h2 id="endTitle">YOU DIED</h2>
+          <p id="endScore">Score: 0</p>
+          <button id="retryBtn" class="btn">RETRY</button>
+        </div>
+      </div>
+      <div id="winScreen" class="overlay hidden">
+        <div class="panel">
+          <h2>YOU SURVIVED</h2>
+          <p id="winScore">Final Score: 0</p>
+          <button id="winBtn" class="btn">PLAY AGAIN</button>
+        </div>
+      </div>
+      <div id="crt"></div>
+    </div>
+  </div>
+
+  <!-- core -->
+  <script src="js/core/Viewport.js"></script>
+  <script src="js/core/GameObject.js"></script>
+  <script src="js/core/Sprites.js"></script>
+  <!-- config & data -->
+  <script src="js/config/settings.js"></script>
+  <script src="js/data/stages.js"></script>
+  <script src="js/input/WordMatcher.js"></script>
+  <script src="js/data/WordBank.js"></script>
+  <!-- rendering -->
+  <script src="js/render/sceneSprites.js"></script>
+  <script src="js/render/Scenery.js"></script>
+  <!-- entities -->
+  <script src="js/entities/Particle.js"></script>
+  <script src="js/entities/Bullet.js"></script>
+  <script src="js/entities/Zombie.js"></script>
+  <script src="js/entities/Boss.js"></script>
+  <script src="js/entities/Player.js"></script>
+  <!-- input & ui -->
+  <script src="js/input/VoiceInput.js"></script>
+  <script src="js/ui/Hud.js"></script>
+  <!-- game -->
+  <script src="js/Game.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
